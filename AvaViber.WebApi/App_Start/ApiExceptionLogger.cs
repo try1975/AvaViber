@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.ExceptionHandling;
 
-namespace AvaViber.WebApi.App_Start
+namespace AvaViber.WebApi
 {
     /// <summary>
     /// Represents implementation of <see cref="ExceptionLogger"/>.
@@ -25,6 +25,8 @@ namespace AvaViber.WebApi.App_Start
             GetOrSetCorrelationId(context.Request);
             var request = await CreateRequest(context.Request);
             // Use a logger of your choice to log a request.
+
+            Logger.Log.Error(request);
 
             void GetOrSetCorrelationId(HttpRequestMessage message)
             {

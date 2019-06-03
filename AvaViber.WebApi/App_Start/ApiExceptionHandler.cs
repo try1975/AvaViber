@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Web.Http.ExceptionHandling;
 using System.Web.Http.Results;
 
-namespace AvaViber.WebApi.App_Start
+namespace AvaViber.WebApi
 {
     /// <summary>
     /// Represents implementation of <see cref="ExceptionHandler"/>.

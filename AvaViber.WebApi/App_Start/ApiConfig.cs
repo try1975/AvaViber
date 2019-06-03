@@ -12,14 +12,14 @@ using System.Web.Http.ExceptionHandling;
 using System.Xml.XPath;
 using Autofac;
 using Autofac.Integration.WebApi;
+using AvaViber.WebApi.Controllers;
 using Microsoft.Owin.Cors;
 using Newtonsoft.Json.Serialization;
 using Owin;
 using Swashbuckle.Application;
 using Swashbuckle.Examples;
-using AvaViber.WebApi.Controllers;
 
-namespace AvaViber.WebApi.App_Start
+namespace AvaViber.WebApi
 {
     /// <summary>
     /// Represents a class that encapsulates several Web Api configurations: CORS, routing, formatters, exception handling, dependency injection and Swagger
@@ -102,9 +102,24 @@ namespace AvaViber.WebApi.App_Start
         {
             _configuration.MapHttpAttributeRoutes();
 
+            _configuration.Routes.MapHttpRoute(
+                name: "swagger_root",
+                routeTemplate: "",
+                defaults: null,
+                constraints: null,
+                handler: new RedirectHandler((message => message.RequestUri.ToString()), "swagger"));
+
             return this;
         }
 
+
+        public ApiConfig ConfigureLogging()
+        {
+            Logger.InitLogger();
+
+            return this;
+        }
+        
         /// <summary>
         /// Configures custom implementations for: <see cref="IExceptionHandler"/> and <see cref="IExceptionLogger"/>.
         /// </summary>

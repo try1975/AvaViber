@@ -2,7 +2,6 @@
 using System.Web.Http;
 using Microsoft.Owin;
 using Owin;
-using AvaViber.WebApi.App_Start;
 
 [assembly: OwinStartup(typeof(AvaViber.WebApi.Template.Startup))]
 namespace AvaViber.WebApi.Template
@@ -23,6 +22,7 @@ namespace AvaViber.WebApi.Template
                 .ConfigureAufacMiddleware()
                 .ConfigureFormatters()
                 .ConfigureRoutes()
+                .ConfigureLogging()
                 .ConfigureExceptionHandling()
                 .ConfigureSwagger()
                 .UseWebApi();
