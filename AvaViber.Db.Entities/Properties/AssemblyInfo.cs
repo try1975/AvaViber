@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SqLiteTest")]
+[assembly: AssemblyTitle("AvaViber.Db.Entities")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SqLiteTest")]
+[assembly: AssemblyProduct("AvaViber.Db.Entities")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6a86ad93-fed8-4161-a20b-8efb4d6783df")]
+[assembly: Guid("b8d72c02-f9eb-4ddb-a42c-410bc3a5d414")]
 
 // Version information for an assembly consists of the following four values:
 //

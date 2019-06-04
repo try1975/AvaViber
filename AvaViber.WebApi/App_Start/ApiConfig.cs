@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net.Http.Formatting;
@@ -12,6 +13,9 @@ using System.Web.Http.ExceptionHandling;
 using System.Xml.XPath;
 using Autofac;
 using Autofac.Integration.WebApi;
+using AvaViber.Db.Entities.QueryProcessors;
+using AvaViber.Db.SqLite;
+using AvaViber.Db.SqLite.QueryProcessors;
 using AvaViber.WebApi.Controllers;
 using Microsoft.Owin.Cors;
 using Newtonsoft.Json.Serialization;
@@ -139,6 +143,9 @@ namespace AvaViber.WebApi
             var builder = new ContainerBuilder();
 
             builder.RegisterType<FooService>().As<IFooService>();
+
+            builder.RegisterType<MessageInfoQuery>().As<IMessageInfoQuery>();
+            builder.RegisterType<AvaViberModel>().As<DbContext>().SingleInstance();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 

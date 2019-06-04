@@ -1,14 +1,15 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
+using AvaViber.Db.Entities;
 
-namespace SqLiteTest
+namespace AvaViber.Db.SqLite.Mappings
 {
     public class MessageInfoMap : EntityTypeConfiguration<MessageInfoEntity>
     {
         public MessageInfoMap(string tableName)
         {
-            HasKey(e => e.EventId);
-            Property(e => e.EventId)
+            HasKey(e => e.Id);
+            Property(e => e.Id)
                 .HasColumnName("EventID")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             

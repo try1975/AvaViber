@@ -171,9 +171,13 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SqLiteTest\SqLiteTest.csproj">
-      <Project>{6A86AD93-FED8-4161-A20B-8EFB4D6783DF}</Project>
-      <Name>SqLiteTest</Name>
+    <ProjectReference Include="..\AvaViber.Db.Entities\AvaViber.Db.Entities.csproj">
+      <Project>{b8d72c02-f9eb-4ddb-a42c-410bc3a5d414}</Project>
+      <Name>AvaViber.Db.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AvaViber.Db.SqLite\AvaViber.Db.SqLite.csproj">
+      <Project>{3fdeb3b2-1996-4bec-b8fe-7247893b306f}</Project>
+      <Name>AvaViber.Db.SqLite</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

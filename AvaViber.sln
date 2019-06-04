@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaViber.WebApi", "AvaViber.WebApi\AvaViber.WebApi.csproj", "{1DEC5FB5-07FD-4708-85C3-6A18CAF6AD1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqLiteTest", "SqLiteTest\SqLiteTest.csproj", "{6A86AD93-FED8-4161-A20B-8EFB4D6783DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaViber.Db.SqLite", "AvaViber.Db.SqLite\AvaViber.Db.SqLite.csproj", "{3FDEB3B2-1996-4BEC-B8FE-7247893B306F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{53B575BD-A282-49BD-8666-A345AAC151C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaViber.Db.Entities", "AvaViber.Db.Entities\AvaViber.Db.Entities.csproj", "{B8D72C02-F9EB-4DDB-A42C-410BC3A5D414}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{1DEC5FB5-07FD-4708-85C3-6A18CAF6AD1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DEC5FB5-07FD-4708-85C3-6A18CAF6AD1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DEC5FB5-07FD-4708-85C3-6A18CAF6AD1D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A86AD93-FED8-4161-A20B-8EFB4D6783DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A86AD93-FED8-4161-A20B-8EFB4D6783DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A86AD93-FED8-4161-A20B-8EFB4D6783DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A86AD93-FED8-4161-A20B-8EFB4D6783DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53B575BD-A282-49BD-8666-A345AAC151C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53B575BD-A282-49BD-8666-A345AAC151C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53B575BD-A282-49BD-8666-A345AAC151C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53B575BD-A282-49BD-8666-A345AAC151C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FDEB3B2-1996-4BEC-B8FE-7247893B306F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDEB3B2-1996-4BEC-B8FE-7247893B306F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDEB3B2-1996-4BEC-B8FE-7247893B306F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDEB3B2-1996-4BEC-B8FE-7247893B306F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8D72C02-F9EB-4DDB-A42C-410BC3A5D414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8D72C02-F9EB-4DDB-A42C-410BC3A5D414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8D72C02-F9EB-4DDB-A42C-410BC3A5D414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8D72C02-F9EB-4DDB-A42C-410BC3A5D414}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
