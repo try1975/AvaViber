@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using System.Linq;
+﻿using System.Linq;
 
 namespace AvaViber.Db.Entities
 {
@@ -7,8 +6,5 @@ namespace AvaViber.Db.Entities
     {
         IQueryable<T> GetEntities();
         T GetEntity(TK id);
-
-
-        DbContext GetDbContext();
     }
 }

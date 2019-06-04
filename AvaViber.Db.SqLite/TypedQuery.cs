@@ -25,10 +25,5 @@ namespace AvaViber.Db.SqLite
             var entity = _entities.Find(id);
             return entity;
         }
-
-        public DbContext GetDbContext()
-        {
-            return _db;
-        }
     }
 }

@@ -142,7 +142,7 @@ namespace AvaViber.WebApi
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<FooService>().As<IFooService>();
+            //builder.RegisterType<FooService>().As<IFooService>();
 
             builder.RegisterType<MessageInfoQuery>().As<IMessageInfoQuery>();
             builder.RegisterType<AvaViberModel>().As<DbContext>().SingleInstance();
