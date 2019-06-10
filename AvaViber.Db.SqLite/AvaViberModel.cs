@@ -21,11 +21,13 @@ namespace AvaViber.Db.SqLite
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         public virtual DbSet<MessageInfoEntity> MessageInfo { get; set; }
+        public virtual DbSet<ChatInfoEntity> ChatInfo { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             const string prefix = "";
             modelBuilder.Configurations.Add(new MessageInfoMap($"{prefix}{nameof(MessageInfo)}"));
+            modelBuilder.Configurations.Add(new ChatInfoMap($"{prefix}{nameof(ChatInfo)}"));
         }
     }
 }

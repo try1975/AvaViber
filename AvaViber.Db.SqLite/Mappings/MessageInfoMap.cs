@@ -16,6 +16,12 @@ namespace AvaViber.Db.SqLite.Mappings
             Property(e => e.ChatId)
                 .HasColumnName("ChatID");
 
+            HasRequired(s => s.Chat)
+                .WithMany(l => l.MessagesInfo)
+                .HasForeignKey(s => s.ChatId)
+                .WillCascadeOnDelete(false)
+                ;
+
             ToTable($"{tableName}");
         }
     }

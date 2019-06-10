@@ -144,8 +144,9 @@ namespace AvaViber.WebApi
 
             //builder.RegisterType<FooService>().As<IFooService>();
 
-            builder.RegisterType<MessageInfoQuery>().As<IMessageInfoQuery>();
             builder.RegisterType<AvaViberModel>().As<DbContext>().SingleInstance();
+            builder.RegisterType<MessageInfoQuery>().As<IMessageInfoQuery>();
+            builder.RegisterType<ChatInfoQuery>().As<IChatInfoQuery>();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
@@ -167,7 +168,7 @@ namespace AvaViber.WebApi
                 {
                     c.SingleApiVersion("v1", GetType().Assembly.GetName().Name);
                     c.PrettyPrint();
-                    c.IncludeXmlComments(() => new XPathDocument($@"{AppContext.BaseDirectory}\bin\WebApiDocumentation.xml"));
+                    c.IncludeXmlComments(() => new XPathDocument($@"{AppContext.BaseDirectory}\App_Data\WebApiDocumentation.xml"));
                     c.RootUrl(req => new Uri(req.RequestUri, HttpContext.Current.Request.ApplicationPath ?? string.Empty).ToString());
                     // In accordance with the built in JsonSerializer, Swashbuckle will, by default, describe enums as integers.
                     // You can change the serializer behavior by configuring the StringToEnumConverter globally or for a given

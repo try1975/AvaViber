@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaViber.Db.SqLite", "AvaVi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaViber.Db.Entities", "AvaViber.Db.Entities\AvaViber.Db.Entities.csproj", "{B8D72C02-F9EB-4DDB-A42C-410BC3A5D414}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaViber.Common", "AvaViber.Common\AvaViber.Common.csproj", "{49B908D5-13E7-4A2C-BCB6-28784D49DEDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B8D72C02-F9EB-4DDB-A42C-410BC3A5D414}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8D72C02-F9EB-4DDB-A42C-410BC3A5D414}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8D72C02-F9EB-4DDB-A42C-410BC3A5D414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49B908D5-13E7-4A2C-BCB6-28784D49DEDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49B908D5-13E7-4A2C-BCB6-28784D49DEDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49B908D5-13E7-4A2C-BCB6-28784D49DEDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49B908D5-13E7-4A2C-BCB6-28784D49DEDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -41,15 +41,23 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\ChatInfoEntity.cs" />
     <Compile Include="Entities\MessageInfoEntity.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="ITypedQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryProcessors\IChatInfoQuery.cs" />
     <Compile Include="QueryProcessors\IMessageInfoQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AvaViber.Common\AvaViber.Common.csproj">
+      <Project>{49b908d5-13e7-4a2c-bcb6-28784d49dedf}</Project>
+      <Name>AvaViber.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
