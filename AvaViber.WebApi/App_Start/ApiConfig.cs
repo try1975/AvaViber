@@ -144,7 +144,7 @@ namespace AvaViber.WebApi
 
             //builder.RegisterType<FooService>().As<IFooService>();
 
-            builder.RegisterType<AvaViberModel>().As<DbContext>().SingleInstance();
+            builder.RegisterType<AvaViberModel>().As<DbContext>();//.SingleInstance();
             builder.RegisterType<MessageInfoQuery>().As<IMessageInfoQuery>();
             builder.RegisterType<ChatInfoQuery>().As<IChatInfoQuery>();
 

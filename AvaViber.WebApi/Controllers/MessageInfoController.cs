@@ -22,10 +22,11 @@ namespace AvaViber.WebApi.Controllers
         /// <inheritdoc />
         public MessageInfoController(IMessageInfoQuery messageInfoQuery)
         {
-            _messageInfoQuery = messageInfoQuery;
+            _messageInfoQuery = messageInfoQuery ?? throw new ArgumentNullException(nameof(messageInfoQuery));
         }
 
-        private static void FillMessages(IEnumerable<MessageInfoEntity> viberMessageEntities, string baseUrl, ICollection<MessageInfoDto> viberMessages)
+        private static void FillMessages(IEnumerable<MessageInfoEntity> viberMessageEntities, string baseUrl,
+            ICollection<MessageInfoDto> viberMessages)
         {
             foreach (var e in viberMessageEntities)
             {
@@ -71,19 +72,20 @@ namespace AvaViber.WebApi.Controllers
         }
 
         /// <summary>
-        /// Сообщения из определенного чата в порядке убывания по времени
+        /// Сообщения из определенного чата (по идентификатору чата) в порядке убывания по времени
         /// </summary>
         /// <param name="chatId">Id чата</param>
         /// <param name="count">Количество возвращаемых записей, по умолчанию - последние 50</param>
         /// <returns></returns>
         [HttpGet]
         [Route("byChat")]
-        public IEnumerable<MessageInfoDto> GetMessagesByChat(int chatId, int count = 50)
+        public IEnumerable<MessageInfoDto> GetMessagesByChatId(int chatId, int count = 50)
         {
             Logger.Log.Info($"GET {Request.Method} {Request.RequestUri}");
             try
             {
-                var baseUrl = $"{Request.RequestUri.Scheme}://{Request.RequestUri.Host}:{Request.RequestUri.Port}/Files/";
+                var baseUrl =
+                    $"{Request.RequestUri.Scheme}://{Request.RequestUri.Host}:{Request.RequestUri.Port}/Files/";
                 var viberMessages = new List<MessageInfoDto>();
                 var viberMessageEntities = _messageInfoQuery.GetEntities()
                     .Where(z => z.ChatId == chatId)
@@ -100,10 +102,44 @@ namespace AvaViber.WebApi.Controllers
                 Logger.Log.Error(exception);
                 throw;
             }
-            
+
         }
 
         /// <summary>
+        /// Сообщения из определенного чата (по наименованию чата) в порядке убывания по времени
+        /// </summary>
+        /// <param name="chatName">Наименование чата</param>
+        /// <param name="count">Количество возвращаемых записей, по умолчанию - последние 50</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("byChatName")]
+        public IEnumerable<MessageInfoDto> GetMessagesByChatName(string chatName, int count = 50)
+        {
+            Logger.Log.Info($"GET {Request.Method} {Request.RequestUri}");
+            try
+            {
+                var baseUrl =
+                    $"{Request.RequestUri.Scheme}://{Request.RequestUri.Host}:{Request.RequestUri.Port}/Files/";
+                var viberMessages = new List<MessageInfoDto>();
+                if (string.IsNullOrEmpty(chatName)) return viberMessages;
+                var viberMessageEntities = _messageInfoQuery.GetEntities()
+                    .Include("Chat")
+                    .Where(z => z.Chat.Name == chatName)
+                    .OrderByDescending(z => z.TimeStamp)
+                    .Take(count)
+                    .ToList();
+
+                FillMessages(viberMessageEntities, baseUrl, viberMessages);
+                return viberMessages;
+            }
+            catch (Exception exception)
+            {
+                Logger.Log.Error(exception);
+                throw;
+            }
+        }
+
+    /// <summary>
         /// Сообщения из всех чатов в порядке убывания по времени
         /// </summary>
         /// <param name="count">Количество возвращаемых записей, по умолчанию - последние 50</param>

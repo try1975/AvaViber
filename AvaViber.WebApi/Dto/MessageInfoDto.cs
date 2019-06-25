@@ -1,5 +1,4 @@
-﻿using System;
-using AvaViber.Common.Enums;
+﻿using AvaViber.Common.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -10,6 +9,9 @@ namespace AvaViber.WebApi.Dto
     /// </summary>
     public class MessageInfoDto
     {
+        /// <summary>
+        /// Идентификатор сообщения
+        /// </summary>
         public int Id { get; set; }
         /// <summary>
         /// Идентификатор чата
@@ -24,6 +26,9 @@ namespace AvaViber.WebApi.Dto
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public MessageType MessageType { get; set; }
+        /// <summary>
+        /// Время сообщения UTC
+        /// </summary>
         public long TimeStamp { get; set; }
 
         public string Body { get; set; }

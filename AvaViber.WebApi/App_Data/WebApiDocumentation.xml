@@ -64,6 +64,22 @@
             <param name="cancellationToken">Cancellation token.</param>
             <returns></returns>
         </member>
+        <member name="T:AvaViber.WebApi.Controllers.ChatInfoController">
+            <inheritdoc />
+            <summary>
+            Информация о чатах вайбер
+            </summary>
+        </member>
+        <member name="M:AvaViber.WebApi.Controllers.ChatInfoController.#ctor(AvaViber.Db.Entities.QueryProcessors.IChatInfoQuery)">
+            <inheritdoc />
+        </member>
+        <member name="M:AvaViber.WebApi.Controllers.ChatInfoController.GetChats(System.Int32)">
+            <summary>
+            Получить список чатов
+            </summary>
+            <param name="count">Количество возвращаемых записей, по умолчанию - 50</param>
+            <returns></returns>
+        </member>
         <member name="T:AvaViber.WebApi.Controllers.MessageInfoController">
             <inheritdoc />
             <summary>
@@ -73,11 +89,19 @@
         <member name="M:AvaViber.WebApi.Controllers.MessageInfoController.#ctor(AvaViber.Db.Entities.QueryProcessors.IMessageInfoQuery)">
             <inheritdoc />
         </member>
-        <member name="M:AvaViber.WebApi.Controllers.MessageInfoController.GetMessagesByChat(System.Int32,System.Int32)">
+        <member name="M:AvaViber.WebApi.Controllers.MessageInfoController.GetMessagesByChatId(System.Int32,System.Int32)">
             <summary>
-            Сообщения из определенного чата в порядке убывания по времени
+            Сообщения из определенного чата (по идентификатору чата) в порядке убывания по времени
             </summary>
             <param name="chatId">Id чата</param>
+            <param name="count">Количество возвращаемых записей, по умолчанию - последние 50</param>
+            <returns></returns>
+        </member>
+        <member name="M:AvaViber.WebApi.Controllers.MessageInfoController.GetMessagesByChatName(System.String,System.Int32)">
+            <summary>
+            Сообщения из определенного чата (по наименованию чата) в порядке убывания по времени
+            </summary>
+            <param name="chatName">Наименование чата</param>
             <param name="count">Количество возвращаемых записей, по умолчанию - последние 50</param>
             <returns></returns>
         </member>
@@ -88,9 +112,29 @@
             <param name="count">Количество возвращаемых записей, по умолчанию - последние 50</param>
             <returns></returns>
         </member>
+        <member name="T:AvaViber.WebApi.Dto.ChatInfoDto">
+            <summary>
+            Информация о чате
+            </summary>
+        </member>
+        <member name="P:AvaViber.WebApi.Dto.ChatInfoDto.Id">
+            <summary>
+            Идентификатор чата
+            </summary>
+        </member>
+        <member name="P:AvaViber.WebApi.Dto.ChatInfoDto.Name">
+            <summary>
+            Наименование чата
+            </summary>
+        </member>
         <member name="T:AvaViber.WebApi.Dto.MessageInfoDto">
             <summary>
             
+            </summary>
+        </member>
+        <member name="P:AvaViber.WebApi.Dto.MessageInfoDto.Id">
+            <summary>
+            Идентификатор сообщения
             </summary>
         </member>
         <member name="P:AvaViber.WebApi.Dto.MessageInfoDto.ChatId">
@@ -108,9 +152,19 @@
             Тип сообщения
             </summary>
         </member>
+        <member name="P:AvaViber.WebApi.Dto.MessageInfoDto.TimeStamp">
+            <summary>
+            Время сообщения UTC
+            </summary>
+        </member>
         <member name="P:AvaViber.WebApi.Dto.MessageInfoDto.ThumbnailLink">
             <summary>
             Ссылка на миниатюру
+            </summary>
+        </member>
+        <member name="P:AvaViber.WebApi.Dto.MessageInfoDto.PayloadLink">
+            <summary>
+            Ссылка на содержимое
             </summary>
         </member>
         <member name="T:AvaViber.WebApi.Template.Startup">
